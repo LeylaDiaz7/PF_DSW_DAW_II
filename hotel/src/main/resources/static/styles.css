@@ -1,0 +1,170 @@
+/* GENERAL */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 20px;
+    color: #333;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* SECCIONES DE BUSQUEDA Y CREACION */
+form {
+    margin: 15px 0;
+}
+
+form input[type="text"] {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 5px 15px;
+    border-radius: 3px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* BOTON CREAR EN LISTADO */
+a.crear {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff !important;
+    padding: 7px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+a.crear:hover {
+    background-color: #218838;
+}
+
+/* TABLA */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 6px;
+}
+
+table thead {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ENLACES DE ACCIÓN COMO BOTONES */
+a.editar {
+    display: inline-block;
+    background-color: #17a2b8;
+    color: #fff !important;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+a.editar:hover {
+    background-color: #138496;
+}
+
+a.eliminar {
+    display: inline-block;
+    background-color: #dc3545;
+    color: #fff !important;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.eliminar:hover {
+    background-color: #c82333;
+}
+
+
+/* SELECT EN FORMULARIOS Y TABLA */
+select {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+/* BOTÓN GUARDAR */
+.guardar {
+    display: inline-block;
+    padding: 7px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.guardar:hover {
+    background-color: #218838;
+}
+
+/* BOTÓN CANCELAR */
+.cancelar {
+    display: inline-block;
+    padding: 7px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff !important;
+    background-color: #6c757d;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.cancelar:hover {
+    background-color: #5a6268;
+}
+
+/* Styles para campos readonly */
+input[readonly] {
+    background-color: #f9f9f9;
+    color: #555;
+}
+
+
+/* SEPARACIÓN EN FORMULARIO DE CREACIÓN */
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    font-weight: bold;
+}
