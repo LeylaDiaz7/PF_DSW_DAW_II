@@ -39,7 +39,8 @@ public class ReservationService {
             throw new RuntimeException("La habitación ya está ocupada en ese rango de fechas.");
         }
 
-        User user = usuarioService.getUserById(dto.idUsuario());
+        User user = new User();
+        user.setIdUsuario(dto.idUsuario());
         Room room = habitacionService.getRoomById(dto.idHabitacion());
 
         validarFechas(dto.fechaLlegada(), dto.fechaSalida());
@@ -57,7 +58,7 @@ public class ReservationService {
         Reservation saved = reservaRepository.save(reserva);
 
         try {
-            habitacionService.updateRoomStatus(room.getIdHabitacion(), Room.EstadoHabitacion.Ocupada.name());
+            habitacionService.updateRoomStatus(room.getIdHabitacion(), "Ocupada");
         } catch (FeignException e) {
             throw new ReservationException("Error al marcar la habitación como ocupada");
         }
@@ -81,7 +82,7 @@ public class ReservationService {
         }
 
         try {
-            habitacionService.updateRoomStatus(reserva.getRoom().getIdHabitacion(), Room.EstadoHabitacion.Disponible.name());
+            habitacionService.updateRoomStatus(reserva.getRoom().getIdHabitacion(), "Disponible");
         } catch (FeignException e) {
             throw new ReservationException("Error al actualizar el estado de la habitación");
         }

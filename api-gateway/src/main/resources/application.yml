@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8087
 
 spring:
   application:
@@ -12,6 +12,11 @@ spring:
           uri: lb://apiusuarios
           predicates:
             - Path=/usuarios/**
+
+        - id: reservation-service
+          uri: lb://reservation-service
+          predicates:
+            - Path=/api/reservas/**
 
 eureka:
   client:

@@ -66,4 +66,21 @@ public class HabitacionRestController {
         }
         return ResponseEntity.ok(habitacion);
     }
+
+    //actualizar estado de la habitacion
+
+    @PutMapping("/{id}/estado")
+    public ResponseEntity<String> actualizarEstadoHabitacion(@PathVariable Integer id,
+                                                             @RequestParam("estado") String estado) {
+        Habitacion habitacion = habitacionService.obtenerPorId(id);
+        if (habitacion == null) {
+            return ResponseEntity.status(404).body("Habitación no encontrada");
+        }
+
+        habitacion.setEstado(estado); // o habitacion.setEstadoHabitacion(...) según tu modelo
+        habitacionService.guardar(habitacion);
+        return ResponseEntity.ok("Estado de la habitación actualizado a: " + estado);
+    }
+
+
 }
