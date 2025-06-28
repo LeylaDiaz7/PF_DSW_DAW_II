@@ -77,7 +77,7 @@ public class HabitacionRestController {
             return ResponseEntity.status(404).body("Habitación no encontrada");
         }
 
-        habitacion.setEstado(estado); // o habitacion.setEstadoHabitacion(...) según tu modelo
+        habitacion.setEstado(estado);
         habitacionService.guardar(habitacion);
         return ResponseEntity.ok("Estado de la habitación actualizado a: " + estado);
     }

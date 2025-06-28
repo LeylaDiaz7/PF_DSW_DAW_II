@@ -1,21 +1,26 @@
 package com.cibertec.edu.Facturacion_service.model;
 
-
 import jakarta.persistence.*;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlElement;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
+@XmlRootElement(name = "pago")
+@XmlAccessorType(XmlAccessType.FIELD)
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Data
 @Table(name = "pagos")
 public class Pagos {
-
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,11 +38,12 @@ public class Pagos {
         @Enumerated(EnumType.STRING)
         private EstadoPago estadoPago;
 
-        private Timestamp fechaPago;
+        @XmlElement
+        private String fechaPago; // ✅ Ahora como String
 
         @PrePersist
         public void prePersist() {
-            this.fechaPago = new Timestamp(System.currentTimeMillis());
-
+                this.fechaPago = ZonedDateTime.now()
+                        .format(DateTimeFormatter.ISO_OFFSET_DATE_TIME); // ⬅️ formato ISO 8601
         }
 }

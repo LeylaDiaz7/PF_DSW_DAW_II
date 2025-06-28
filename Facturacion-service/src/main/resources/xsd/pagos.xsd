@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://cibertec.edu/pagos/ws"
+           xmlns:tns="http://cibertec.edu/pagos/ws"
+           elementFormDefault="qualified">
+
+
+    <xs:element name="getPagoByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idReserva" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="getPagoByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="pago" type="tns:Pago"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="getAllPagosRequest" type="xs:anyType"/>
+
+
+    <xs:element name="getAllPagosResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="pago" type="tns:Pago" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="Pago">
+        <xs:sequence>
+            <xs:element name="idPagos" type="xs:long"/>
+            <xs:element name="idReserva" type="xs:long"/>
+            <xs:element name="monto" type="xs:double"/>
+            <xs:element name="metodoPago" type="xs:string"/>
+            <xs:element name="estadoPago" type="xs:string"/>
+            <xs:element name="fechaPago" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

@@ -60,7 +60,7 @@ public class HabitacionService {
         habitacionRepository.deleteById(id);
     }
 
-    // ✅ ACTUALIZAR HABITACIÓN: Cambia solo el TipoHabitacion
+
     public Habitacion actualizarHabitacion(Integer id, Habitacion habitacionActualizada) {
         Habitacion existente = obtenerPorId(id);
         if (existente == null) {

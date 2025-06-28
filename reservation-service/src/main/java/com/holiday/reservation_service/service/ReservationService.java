@@ -169,4 +169,10 @@ public class ReservationService {
         }
     }
 
+
+    public ReservationResponseDTO obtenerReservaPorId(Integer id) {
+        Reservation reserva = reservaRepository.findById(id).orElse(null);
+        if (reserva == null) return null;
+        return convertirAResponseDTO(reserva);
+    }
 }

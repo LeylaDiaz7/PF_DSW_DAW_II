@@ -20,7 +20,7 @@ public class TipoHabitacion {
     @Column(precision = 10, scale = 2)
     private BigDecimal precioBase;
 
-    // ✅ Getters y Setters
+
     public Integer getIdTipo() {
         return idTipo;
     }

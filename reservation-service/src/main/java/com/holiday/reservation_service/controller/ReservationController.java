@@ -35,4 +35,15 @@ public class ReservationController {
     public ResponseEntity<List<ReservationResponseDTO>> listarTodasLasReservas() {
         return ResponseEntity.ok(reservaService.listarTodasLasReservas());
     }
+
+
+    @GetMapping("/{reservaId}")
+    public ResponseEntity<ReservationResponseDTO> obtenerReservaPorId(@PathVariable Integer reservaId) {
+        ReservationResponseDTO reserva = reservaService.obtenerReservaPorId(reservaId);
+        if (reserva == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(reserva);
+    }
+
 }

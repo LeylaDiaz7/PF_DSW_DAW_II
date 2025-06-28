@@ -18,7 +18,7 @@ public class Habitacion {
 
     private String estado;
 
-    // ✅ Getters y Setters
+
 
     public Integer getIdHabitacion() {
         return idHabitacion;
